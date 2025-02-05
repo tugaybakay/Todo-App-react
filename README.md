@@ -1,2 +1,2 @@
 Todo App
-https://todo-app-react-o8ohn2u1h-tugaybakays-projects.vercel.app/
+https://todo-app-react-gules-pi.vercel.app/
