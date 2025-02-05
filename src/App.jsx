@@ -1,12 +1,14 @@
 import React from "react";
 import { nanoid } from "nanoid";
 import "./App.css";
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 
 function App() {
   const [tasks,setTasks] = React.useState(() => {
      return JSON.parse(localStorage.getItem("tasks")) || [];
   });
+  const [parent, enableAnimations] = useAutoAnimate()
 
   React.useEffect(() => {
     localStorage.setItem("tasks",JSON.stringify(tasks));
@@ -58,7 +60,7 @@ function App() {
         <input type="text" placeholder="Type a task!" name="task-input" className="flex-1 px-4 py-2 border rounded outline-none"/>
         <button className="shrink-0 border py-1 px-4 rounded cursor-pointer transition bg-white text-purple-950 font-semibold hover:bg-purple-300 outline-none  ">Submit</button>
       </form>
-      <ul id="task-list" className="border-t mt-4 pt-4">
+      <ul id="task-list" ref={parent} className="border-t mt-4 pt-4">
         {taskElements}
       </ul>
     </div>
