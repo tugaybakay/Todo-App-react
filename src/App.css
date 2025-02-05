@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.completed button{
+  @apply visible;
+}
+
+.completed p{
+  @apply line-through;
+}
